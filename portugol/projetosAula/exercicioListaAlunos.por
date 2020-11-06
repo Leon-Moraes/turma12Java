@@ -15,22 +15,24 @@ programa
 		"raulogus2@gmail.com", "ricardomrfin@gmail.com", "thiagohdosanjos99@gmail.com", "vitoriagcf@hotmail.com", "william.xavier07@hotmail.com"}
 		inteiro x;
 		inteiro nota[limite]
+		inteiro notaTotal[limite]
 		cadeia entrega[limite]
 		cadeia alun;	
 		logico sexo[limite] = {verdadeiro, falso, falso, falso, verdadeiro, falso, falso, falso, falso, falso, falso, falso, falso, falso, falso, verdadeiro, 
 		verdadeiro,falso, verdadeiro, falso, falso, verdadeiro, verdadeiro, verdadeiro, falso, falso,falso, verdadeiro, falso}
 		cadeia parar
-		
-				para( x = 0; x < limite; x++){
 
+			escreva("CODIGO","\t","NOME","\t\t\t\t","EMAIL","\t\t\t","\t\t","NOTA","\n")
+				para( x = 0; x < limite; x++){
 					
+					escreva("G5 - ",x," | ",nome[x],"\t",mail[x],"\t\t",notaTotal[x],"\n")
+					}
 					
-					escreva("Ensira o código do aluno correspondente: ")
+					escreva("\n","Ensira o código do aluno correspondente: ")
 					leia(x);
 					se (sexo[x] == verdadeiro)
 					{
 						alun = "Aluna"
-						
 					}
 					senao{
 						alun = "Aluno"
@@ -39,33 +41,43 @@ programa
 					escreva("O aluno entregou (S/N) ? ")
 					
 					leia(entrega[x])
-					se(entrega[x] == "S" ou entrega[x] == "s"){
+					enquanto(entrega[x] == "S" ou entrega[x] == "s"){
 							
-							escreva("Insira a nota do aluno "," : ")
-							
-							leia(nota[x]);
-
-							nota[x] = nota[x] + 1;
-					}senao {
-							
-							nota[x] = 0;
-					}
-
-					escreva("\n","Deseja cadastrar outra nota de aluno ? (S/N) ")
-					leia(parar) 
-					se(parar == "S" ou parar == "s"){
+						escreva("Insira a nota do aluno "," : ")
+						leia(nota[x])
 						
-					} senao {
-						escreva("CODIGO","\t","NOME","\t\t\t\t","EMAIL","\t\t\t","ENTREGA","\t\t\t\t","NOTA","\n")
-						para(x = 0; x < limite; x++){
-						escreva("G5 - ",x,"\t",nome[x],"\t",mail[x],"\t\t\t",entrega[x],"\t",nota[x],"\n")
+						notaTotal[x] = notaTotal[x] + nota[x]
+						
+						se(entrega[x] == "N" ou entrega[x] == "n"){
+							notaTotal[x] = notaTotal[x] + nota[x]
 						}
-						
+						escreva("\n","Deseja cadastrar outra nota de aluno ? (S/N) ")
+						leia(parar) 
+						se(parar == "S" ou parar == "s"){
+							escreva("\n","Ensira o código do aluno correspondente: ")
+							leia(x);
+							se (sexo[x] == verdadeiro)
+							{
+								alun = "Aluna"
+							}
+							senao{
+								alun = "Aluno"
+							}
+							escreva(alun," ",nome[x] ," ","\n")
+							escreva("O aluno entregou (S/N) ? ");	
+							leia(entrega[x]);	
+						} senao {
+							escreva("CODIGO","\t","NOME","\t\t\t\t","EMAIL","\t\t\t","ENTREGA","\t\t\t\t","NOTA","\n")
+							para(x = 0; x < limite; x++){
+							escreva("G5 - ",x,"\t",nome[x],"\t\t\t",mail[x],"\t\t\t",entrega[x],"\t",notaTotal[x],"\n")
+							}
+							retorne;
+						}
 					}
-				
-				}
-	}
+
+		}
 }
+
 
 
 
@@ -75,7 +87,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2345; 
+ * @POSICAO-CURSOR = 2121; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
