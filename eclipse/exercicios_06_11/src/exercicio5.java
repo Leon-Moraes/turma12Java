@@ -18,7 +18,6 @@ public class exercicio5 {
 		double notaPonderada1 = (nota1 * peso1);
 		double notaPonderada2 = (nota2 * peso2);
 		double notaPonderada3 = (nota3 * peso3);
-		
 		double media = (notaPonderada1 + notaPonderada2 + notaPonderada3) / totalNotas;
 		
 		System.out.println("A média do aluno é:"+media);
