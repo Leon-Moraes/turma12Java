@@ -25,5 +25,4 @@ public class Smartphone {
 		System.out.println("OS: "+samsung.sysOperacional);
 		System.out.println("Hertz do processador: "+samsung.hertz+"Ghz");
 	}
-
 }

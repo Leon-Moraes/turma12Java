@@ -1,6 +1,6 @@
 package banco;
 import java.util.Scanner;
-public class conta_empresarial {
+public class conta_banco {
 	public static void main(String[]args) {
 		Scanner leia = new Scanner(System.in);
 		
